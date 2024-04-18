@@ -26,6 +26,27 @@
                            Text="{Binding PetRaze}"
                            FontSize="Medium"/>
                     </Frame>
+                    <Label Text="Age" TextColor="White"/>
+                    <Frame BackgroundColor="#000"
+                           Margin="0,0,0,10">
+                        <Entry Placeholder="Age" 
+                               TextColor="#fff"
+                               Margin="-8"
+                               Text="{Binding PetAge}"
+                               FontSize="Medium"
+                            />
+                    </Frame>
+
+                    <Label Text="Size" TextColor="White"/>
+                    <Frame BackgroundColor="#000"
+                           Margin="0,0,0,10">
+                        <Entry Placeholder="Age" 
+                               TextColor="#fff"
+                               Margin="-8"
+                               Text="{Binding PetSize}"
+                               FontSize="Medium"
+                            />
+                    </Frame>
 
                     <Picker Title="Dispensador"
                         TitleColor="White"
