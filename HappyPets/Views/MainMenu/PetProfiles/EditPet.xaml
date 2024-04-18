@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HappyPets.Views.MainMenu.PetProfiles.EditPet">
+    <StackLayout>
+        <Frame HeightRequest="200"
+               WidthRequest="200"
+               CornerRadius="150"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               IsClippedToBounds="True"
+               Padding="0"
+               BorderColor="Black"
+               Margin="0,15">
+            <Image Aspect="AspectFit"
+                   Source="{Binding Image}"
+              
+                   HeightRequest="300"
+                   WidthRequest="300"
+                   VerticalOptions="Start"
+                   HorizontalOptions="Center" />
+            
+        </Frame>
+        <Button Margin="250,-50,100,0"
+                HeightRequest="50"
+                Text="Edit Img"
+                CornerRadius="50"
+                BackgroundColor="Black"
+                BorderWidth="2"
+                BorderColor="#ff7711"
+                />
+
+        <Frame Margin="10,20"
+               BackgroundColor="Black"
+               BorderColor="#ff7711">
+            <StackLayout>
+                <Label Text="Nombre:"
+                       FontSize="Title"
+                       TextColor="White"/>
+                <Entry Placeholder="nuevo nombre"
+                       FontSize="Title"
+                       TextColor="#ff7711"/>
+            </StackLayout>
+        </Frame>
+
+        <Frame BackgroundColor="#ff7711"
+               Margin="15,0,15,0"
+               BorderColor="Black">
+            <StackLayout>
+
+                <Label Text="Raza:"
+                           FontSize="Large"
+                           TextColor="#fff"
+                           FontAttributes="Bold"
+                          
+                       
+                           />
+
+                <Entry Text="Perro"
+                           FontSize="Large"
+                           TextColor="#fff"
+                           FontAttributes="Bold"
+                           Margin="100,-50,0,0"
+                        
+                           />
+                <Label Text="Edad:"
+                           FontSize="Large"
+                           TextColor="#fff"
+                           FontAttributes="Bold"
+                           Margin="0,10"
+                          />
+                <Entry Text="1 año"
+                           FontSize="Large"
+                           TextColor="#fff"
+                           FontAttributes="Bold"
+                           Margin="100,-60,0,-60"
+                    
+                           />
+                <Label Text="Dispenser:"
+                           FontSize="Large"
+                           TextColor="#fff"
+                           FontAttributes="Bold"
+                           Margin="0,70"
+                          />
+                <Picker Margin="160,-120,0,0"
+                        Title="dispesador"
+                        FontSize="Title"
+                        TitleColor="White"
+                        FontAttributes="Bold">
+
+                </Picker>
+            </StackLayout>
+
+        </Frame>
+        <Button Margin="110,50"
+                HeightRequest="70"
+                BackgroundColor="White"
+                Text="Aceptar"
+                TextColor="#ff7711"
+                BorderColor="Black"
+                BorderWidth="2"
+                FontSize="Title"
+                FontAttributes="Bold"
+                VerticalOptions="Center"/>
+    </StackLayout>
+</ContentPage>

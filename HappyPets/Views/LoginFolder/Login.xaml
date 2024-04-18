@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HappyPets.Views.LoginFolder.Login">
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="FontSize" Value="Large"/>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="#EEE"/>
+            <Setter Property="Margin" Value="0,0,0,5"/>
+            <Setter Property="FontSize" Value="Large"/>
+        </Style>
+
+    </ContentPage.Resources>
+    <Grid>
+        <Frame BackgroundColor="#ff7711"
+               Margin="10,175,10,10"
+               BorderColor="Black">
+            <StackLayout>
+                <Label Text="Email:"
+                       TextColor="white"/>
+                <Frame BackgroundColor="#000"
+                       Margin="0,0,0,10">
+                    <Entry Placeholder="Your Email"
+                           TextColor="#fff"
+                           Margin="-8"
+                           Text="{Binding Email}"
+                           FontSize="Medium"
+                           x:Name="email"/>
+                </Frame>
+                <Label Text="Password:"
+                       TextColor="white"/>
+                <Frame BackgroundColor="#000">
+                    <Entry Placeholder="Your Passwrod"
+                           TextColor="#fff"
+                           Margin="-8"
+                           Text="{Binding Password}"
+                           IsPassword="True"
+                           FontSize="Medium"
+                           x:Name="password"
+                           
+                           />
+                </Frame>
+                <Button Text="Login"
+                        Margin="0,45,0,0"
+                        BackgroundColor="White"
+                        TextColor="#ff7711"
+                        BorderColor="Black"
+                        BorderWidth="2"
+                        Command="{Binding GoToMainMenuCommand}">
+                    <Button.Triggers>
+                        <DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference email}, Path=Text.Length}" Value="0">
+                            <Setter Property="IsEnabled" Value="False" />
+                        </DataTrigger>
+                        <DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference password}, Path=Text.Length}" Value="0">
+                            <Setter Property="IsEnabled" Value="False" />
+                        </DataTrigger>
+                    </Button.Triggers>
+                </Button>
+                <Button Text="¿No tienes una cuenta? Registrate aquí!"
+                        Background="Transparent"
+                        Padding="15"
+                        Command="{Binding GoToRegisterCommand}"/>
+              <!--  <Button Text="¿Olvidaste tú constraseña? Recuperala!"
+                        Background="Transparent"
+                        Padding="15"
+                        Command="{Binding GoToRecoverCommand}"/>
+                -->
+            </StackLayout>
+        </Frame>
+        <Frame HeightRequest="140"
+               WidthRequest="140"
+               CornerRadius="70"
+               HorizontalOptions="Center"
+               IsClippedToBounds="True"
+               Padding="0"
+               BorderColor="Black"
+               Margin="0,0,0,600">
+          <!-- 
+             <Image Aspect="AspectFit"
+                   Source="dotnet_bot.png"
+                   SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                   HeightRequest="140"
+                   WidthRequest="140"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center" />
+            --> 
+        </Frame>
+    </Grid>
+</ContentPage>

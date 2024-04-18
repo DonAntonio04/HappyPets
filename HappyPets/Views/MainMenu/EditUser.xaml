@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HappyPets.Views.MainMenu.EditUser">
+    <StackLayout>
+        <Frame HeightRequest="300"
+               WidthRequest="300"
+               CornerRadius="150"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               IsClippedToBounds="True"
+               Padding="0"
+               BorderColor="Black"
+               Margin="0,15">
+            <Image Aspect="AspectFit"
+                   Source="{Binding Image}"
+               
+                   HeightRequest="400"
+                   WidthRequest="400"
+                   VerticalOptions="Start"
+                   HorizontalOptions="Center" />
+
+        </Frame>
+        <Button Margin="250,-50,100,0"
+                HeightRequest="50"
+                Text="Edit Img"
+                CornerRadius="50"
+                BackgroundColor="Black"
+                BorderWidth="2"
+                BorderColor="#ff7711"
+                />
+
+        <Label Text="{Binding NameOfPet}"
+               TextColor="#111"
+               FontSize="Title"
+            
+               
+               HorizontalTextAlignment="Center"
+               Margin="0,0,0,0"
+               FontAttributes="Bold"/>
+        <Frame BackgroundColor="#ff7711"
+               Margin="15,0,15,20"
+               BorderColor="Black">
+            <StackLayout >
+                <Label Text="Nombre:"
+                           FontSize="Large"
+                           TextColor="#fff"
+                           FontAttributes="Bold"
+                           
+                       
+                           />
+                <Entry Placeholder="you name"
+                       PlaceholderColor="White"
+                           FontSize="Large"
+                           TextColor="#fff"
+                           FontAttributes="Bold"
+                           Margin="130,-50,0,10"
+                          
+                           />
+                <Label Text="Email:"
+                           FontSize="Large"
+                           TextColor="#fff"
+                           FontAttributes="Bold"
+                      
+                       
+                           />
+                <Entry Placeholder="your email"
+                       PlaceholderColor="White"
+                           FontSize="Large"
+                           TextColor="#fff"
+                           FontAttributes="Bold"
+                           Margin="100,-50,0,10"
+                       
+                           />
+                <Label Text="Telefono: "
+                           FontSize="Large"
+                           TextColor="#fff"
+                           FontAttributes="Bold"
+                           Margin="0,0"
+                           />
+                <Entry
+                    Placeholder="you phone"
+                    PlaceholderColor="White"
+                           FontSize="Large"
+                           TextColor="#fff"
+                           FontAttributes="Bold"
+                           Margin="140,-50,0,0"
+                          
+                           />
+
+            </StackLayout>
+
+        </Frame>
+        <Button Margin="110,50"
+                HeightRequest="70"
+                BackgroundColor="White"
+                Text="Aceptar"
+                TextColor="#ff7711"
+                BorderColor="Black"
+                BorderWidth="2"
+                FontSize="Title"
+                FontAttributes="Bold"
+                VerticalOptions="Center"/>
+    </StackLayout>
+</ContentPage>

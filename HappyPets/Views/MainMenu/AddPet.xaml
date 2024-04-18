@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HappyPets.Views.MainMenu.AddPet">
+    <StackLayout>
+        <Grid>
+            <Frame BackgroundColor="#ff7711"
+               Margin="10,155,10,50"
+               BorderColor="Black">
+                <StackLayout>
+                    <Label Text="Name of Dog" TextColor="White"/>
+                    <Frame BackgroundColor="#000"
+                       Margin="0,0,0,10">
+                        <Entry Placeholder="Pet Name"
+                           TextColor="#fff"
+                           Margin="-8"
+                           Text="{Binding PetName}"
+                           FontSize="Medium"/>
+                    </Frame>
+                    <Label Text="dog breed" TextColor="White"/>
+                    <Frame BackgroundColor="#000"
+                       Margin="0,0,0,10">
+                        <Entry Placeholder="dog breed"
+                           TextColor="#fff"
+                           Margin="-8"
+                           Text="{Binding PetRaze}"
+                           FontSize="Medium"/>
+                    </Frame>
+
+                    <Picker Title="Dispensador"
+                        TitleColor="White"
+                        FontSize="Large"
+                        TextColor="White">
+                        <Picker.ItemsSource >
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Default</x:String>
+                                <x:String>Baboon</x:String>
+                                <x:String>Capuchin Monkey</x:String>
+                                <x:String>Blue Monkey</x:String>
+                                <x:String>Squirrel Monkey</x:String>
+                                <x:String>Golden Lion Tamarin</x:String>
+                                <x:String>Howler Monkey</x:String>
+                                <x:String>Japanese Macaque</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+
+                    <Button Text="Register"
+                        Margin="0,10,0,0"
+                        FontAttributes="Bold"
+                        FontSize="Large"
+                        Command="{Binding RegisterPetCommand}"
+                        BackgroundColor="White"
+                        TextColor="#ff7711"
+                        BorderColor="Black"
+                        BorderWidth="2"/>
+                </StackLayout>
+            </Frame>
+            <Frame HeightRequest="140"
+               WidthRequest="140"
+               CornerRadius="70"
+               HorizontalOptions="Center"
+               IsClippedToBounds="True"
+               Padding="0"
+               BorderColor="Black"
+               Margin="0,5,0,600">
+                <Image Aspect="AspectFit"
+                   Source="dotnet_bot.png"
+                   HeightRequest="140"
+                   WidthRequest="140"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center" />
+            </Frame>
+        </Grid>
+    </StackLayout>
+
+
+</ContentPage>

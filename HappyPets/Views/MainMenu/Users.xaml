@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HappyPets.Views.MainMenu.Users">
+    <Grid RowDefinitions="*,*">
+        <Frame HeightRequest="300"
+               WidthRequest="300"
+               CornerRadius="150"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               IsClippedToBounds="True"
+               Padding="0"
+               BorderColor="Black"
+               Margin="0,10"
+               Grid.Row="0"
+               Grid.Column="0">
+            <Image Aspect="AspectFit"
+                   Source="usuario.png"
+                
+                   HeightRequest="400"
+                   WidthRequest="400"
+                   VerticalOptions="Start"
+                   HorizontalOptions="Center"
+                   Margin="0,-50"/>
+        </Frame>
+        <Label Text="!Bienvenido otra vez UserName!"
+               Grid.Row="1"
+               HorizontalOptions="Center"
+               FontSize="Title"
+               FontAttributes="Bold"
+      
+               Margin="0,-10,0,0"
+               TextColor="Black"/>
+        <Frame Grid.Row="2"
+               Margin="18,50,18,100"
+               BackgroundColor="#ff7711"
+               BorderColor="Black">
+            <Grid ColumnDefinitions="*,*"
+                  RowDefinitions="*,*">
+
+                <Label Grid.Row="0"
+                       Grid.ColumnSpan="2"
+                       Text="Tú Info"
+                       TextColor="#fff"
+                       HorizontalOptions="Center"
+                       FontSize="Large"
+                       Margin="0,-5,0,0"/>
+                <Label Grid.Row="1"
+                       Grid.Column="0"
+                       TextColor="#fff"
+                       Text="Email:"
+                       FontSize="Large"
+                       Margin="0,-40,0,0"/>
+                <Label Grid.Row="1"
+                       Grid.Column="1"
+                       TextColor="#fff"
+                       Text="user@gmail.com"
+                       FontSize="Medium"
+                       Margin="0,-40,10,0"
+                       HorizontalOptions="End"/>
+                <Label Grid.Row="2"
+                       Grid.Column="0"
+                       TextColor="#fff"
+                       Text="Telefono:"
+                       FontSize="Large"
+                       Margin="0,0,0,0"/>
+                <Label Grid.Row="2"
+                       Grid.Column="1"
+                       TextColor="#fff"
+                       Text="123456789."
+                       FontSize="Medium"
+                       Margin="0,0,10,0"
+                       HorizontalOptions="End"/>
+            </Grid>
+        </Frame>
+        <Button Text="Cerrar Sesión"
+                HorizontalOptions="Start"
+                VerticalOptions="End"
+                Margin="15,15,0,30"
+                Grid.Row="3"
+                FontSize="Large" BorderColor="Black"
+                BorderWidth="2"
+                BackgroundColor="White"
+                TextColor="#ff7711"
+                Command="{Binding CerrarSesionCommand}"/>
+        <Button Text=" Editar Info "
+                HorizontalOptions="End"
+                VerticalOptions="End"
+                Margin="10,15,20,30"
+                Grid.Row="3"
+                FontSize="Large"
+                BorderColor="Black"
+                BorderWidth="2"
+                TextColor="#ff7711"
+                BackgroundColor="White"
+                Command="{Binding editarUserCommand}"/>
+    </Grid>
+</ContentPage>

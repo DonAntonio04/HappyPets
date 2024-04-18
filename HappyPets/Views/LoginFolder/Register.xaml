@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HappyPets.Views.LoginFolder.Register">
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="#000"/>
+            <Setter Property="Margin" Value="0,0,0,5"/>
+            <Setter Property="FontSize" Value="Large"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <Grid>
+            <Frame BackgroundColor="#ff7711"
+                   Margin="10,155,10,5"
+                   BorderColor="Black">
+                <StackLayout>
+                    <Label Text="Name"/>
+                    <Frame BackgroundColor="white"
+                           Margin="0,0,0,10">
+                        <Entry Placeholder="Your Name"
+                               TextColor="#000"
+                               Margin="-8"
+                               Text="{Binding Name}"
+                               FontSize="Medium"
+                               PlaceholderColor="Black"/>
+                    </Frame>
+
+                    <Label Text="Phone"/>
+                    <Frame BackgroundColor="white"
+                           Margin="0,0,0,10">
+                        <Entry Placeholder="Your Phone"
+                               TextColor="#000"
+                               Margin="-8"
+                               Text="{Binding PhoneNumber}"
+                               FontSize="Medium"
+                               PlaceholderColor="Black"/>
+                    </Frame>
+
+                    <Label Text="Email:"/>
+                    <Frame BackgroundColor="white"
+                           Margin="0,0,0,10">
+                        <Entry Placeholder="Your Email"
+                               TextColor="#000"
+                               Margin="-8"
+                               Text="{Binding Email}"
+                               FontSize="Medium"
+                               PlaceholderColor="Black"/>
+                    </Frame>
+
+                    <Label Text="Password:"/>
+                    <Frame BackgroundColor="white"
+                           Margin="0,0,0,10">
+                        <Entry Placeholder="Your Password"
+                               TextColor="#000"
+                               Margin="-8"
+                               Text="{Binding Password}"
+                               IsPassword="True"
+                               FontSize="Medium"
+                               PlaceholderColor="Black"/>
+                    </Frame>
+
+                    <Label Text="Password Confirm:"/>
+                    <Frame BackgroundColor="white"
+                           Margin="0,0,0,10">
+                        <Entry Placeholder="Your Password"
+                               TextColor="#000"
+                               Margin="-8"
+                               Text="{Binding PasswordConfirm}"
+                               IsPassword="True"
+                               FontSize="Medium"
+                               PlaceholderColor="Black"/>
+                    </Frame>
+
+                    <Button Text="Register"
+                            Margin="0,10,0,0"
+                            FontAttributes="Bold"
+                            FontSize="Large"
+                            BackgroundColor="Black"
+                            TextColor="#ff7711"
+                            Command="{Binding RegisterCommand}"/>
+                </StackLayout>
+            </Frame>
+            <Frame HeightRequest="140"
+                   WidthRequest="140"
+                   CornerRadius="70"
+                   HorizontalOptions="Center"
+                   IsClippedToBounds="True"
+                   Padding="0"
+                   BorderColor="Gray"
+                   Margin="0,5,0,600">
+                <Image Aspect="AspectFit"
+                       Source="dotnet_bot_waving.png" 
+                    HeightRequest="140"
+                       WidthRequest="140"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center" />
+            </Frame>
+        </Grid>
+    </ScrollView>
+</ContentPage>
