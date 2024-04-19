@@ -25,7 +25,7 @@
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Frame BackgroundColor="LightYellow"
+                    <Frame BackgroundColor="Orange"
                        CornerRadius="10"
                        Padding="35"
                        Margin="10">

@@ -52,7 +52,7 @@
                         TextColor="#ff7711"
                         BorderColor="Black"
                         BorderWidth="2"
-                        Command="{Binding GoToMainMenuCommand}">
+                        Command="{Binding VerificationAndGoToMainMenuCommand}">
                     <Button.Triggers>
                         <DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference email}, Path=Text.Length}" Value="0">
                             <Setter Property="IsEnabled" Value="False" />
@@ -73,23 +73,22 @@
                 -->
             </StackLayout>
         </Frame>
-        <Frame HeightRequest="140"
-               WidthRequest="140"
-               CornerRadius="70"
+        <Frame HeightRequest="300"
+               WidthRequest="130"
+               CornerRadius="25"
                HorizontalOptions="Center"
                IsClippedToBounds="True"
                Padding="0"
                BorderColor="Black"
                Margin="0,0,0,600">
-          <!-- 
+        
              <Image Aspect="AspectFit"
-                   Source="dotnet_bot.png"
-                   SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                   HeightRequest="140"
+                   Source="https://i.ibb.co/2jjvctd/usuario.png"
+                   HeightRequest="130"
                    WidthRequest="140"
                    VerticalOptions="Center"
                    HorizontalOptions="Center" />
-            --> 
+            
         </Frame>
     </Grid>
 </ContentPage>
