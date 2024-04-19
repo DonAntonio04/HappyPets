@@ -1,6 +1,5 @@
-﻿using HappyPets.Models;
+﻿using System;
 using HappyPets.ViewModel;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,16 +7,17 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using HappyPets.Models;
 
-namespace HappyPets.Views.MainMenu.PetProfiles
+namespace HappyPets.Views.MainMenu
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class EditPet : ContentPage
+    public partial class DeletePet : ContentPage
     {
-        public EditPet()
+        public DeletePet(PetsModel pets)
         {
             InitializeComponent();
-            BindingContext = new EditPetViewModel(Navigation);
+            BindingContext = new EditPetViewModel(pets,Navigation);
         }
     }
 }

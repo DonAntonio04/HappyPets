@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HappyPets.Views.LoginFolder.Login">
+             x:Class="HappyPets.Views.LoginFolder.Login"
+            BackgroundColor="Orange"
+             >
     <ContentPage.Resources>
         <Style TargetType="Button">
             <Setter Property="FontAttributes" Value="Bold"/>
@@ -45,6 +47,7 @@
                 </Frame>
                 <Button Text="Login"
                         Margin="0,45,0,0"
+                        CornerRadius="10"
                         BackgroundColor="White"
                         TextColor="#ff7711"
                         BorderColor="Black"

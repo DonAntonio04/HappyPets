@@ -1,4 +1,6 @@
-﻿using HappyPets.Models;
+﻿using HappyPets.Datos;
+using HappyPets.Models;
+using HappyPets.Views.MainMenu;
 using HappyPets.Views.MainMenu.PetProfiles;
 using System;
 using System.Collections.Generic;
@@ -12,22 +14,32 @@ namespace HappyPets.ViewModel
 {
     public class MyPetsViewModel : BaseViewModel
     {
-        
-            #region VARIABLES
+
+        #region VARIABLES
+        PetsModel _Selectpets;
             private ObservableCollection<ReferenceToObservableCollection> _mascotasDeEjemplo;
             private ReferenceToObservableCollection _petSelect;
-            #endregion
+          ObservableCollection<PetsModel> _Listpets;
+        #endregion
 
-            #region CONSTRUCTOR
-            public MyPetsViewModel(INavigation navigation)
-            {
-                Navigation = navigation;
-                Mostrar();
-            }
-            #endregion
+        #region CONSTRUCTOR
+            //public MyPetsViewModel(PetsModel pets, INavigation navigation)
+            //{
+            //    Navigation = navigation;
+                
+    
+            //}
 
-            #region OBJECTS
-            public ObservableCollection<ReferenceToObservableCollection> MascotasDeEjemplo
+        public MyPetsViewModel( INavigation navigation)
+        {
+            Navigation = navigation;
+            MostrarPets();
+        }
+
+        #endregion
+
+        #region OBJECTS
+        public ObservableCollection<ReferenceToObservableCollection> MascotasDeEjemplo
             {
                 get { return _mascotasDeEjemplo; }
                 set { SetValue(ref _mascotasDeEjemplo, value); }
@@ -37,12 +49,33 @@ namespace HappyPets.ViewModel
                 get { return _petSelect; }
                 set { SetValue(ref _petSelect, value); }
             }
-            #endregion
 
-            #region METHODS
-            public ObservableCollection<ReferenceToObservableCollection> MostrarImagenes()
+        public ObservableCollection<PetsModel> Listpets
+        {
+            get { return _Listpets; }
+            set
             {
-                return new ObservableCollection<ReferenceToObservableCollection>
+                SetValue(ref _Listpets, value);
+                OnpropertyChanged();
+            }
+        }
+        public PetsModel SelectPets
+        {
+            get { return _Selectpets; }
+            set
+            {
+                if (_Selectpets != value)
+                {
+                    _Selectpets = value;
+                }
+            }
+        }
+        #endregion
+
+        #region METHODS
+        public ObservableCollection<ReferenceToObservableCollection> MostrarImagenes()
+        {
+            return new ObservableCollection<ReferenceToObservableCollection>
             {
                 new ReferenceToObservableCollection
                 {
@@ -60,27 +93,38 @@ namespace HappyPets.ViewModel
                     Nombre = "chiquinunis 3"
                 }
             };
-            }
-            public async Task AlimentarPet()
+        }
+        public async Task AlimentarPet()
             {
                 await DisplayAlert("Listo", "se ha alimentado correctamente tu mascota", "OK");
             }
-            public void Mostrar()
-            {
-                _mascotasDeEjemplo = new ObservableCollection<ReferenceToObservableCollection>(MostrarImagenes());
-            }
+      
+        public async Task MostrarPets()
+        {
+            var funcion = new DatosPets();
+            var lista = await funcion.MostrarPets();
+            Listpets = lista;
+        }
+            //public void Mostrar()
+            //{
+            //    _mascotasDeEjemplo = new ObservableCollection<ReferenceToObservableCollection>(MostrarImagenes());
+            //}
 
             public async Task GoToPetProfile()
             {
                 await Navigation.PushAsync(new PetProfile(_petSelect));
             }
+        //public async Task OpenViewEdit()
+        //{
+        //    await Navigation.PushAsync(new EditPet(SelectPets));
+        //}
 
-            #endregion
+        #endregion
 
-            #region COMMANDS
-            public ICommand AlimentarPetCommand => new Command(async () => await AlimentarPet());
-
-            public ICommand GoToProfileCommand => new Command(async () => await GoToPetProfile());
+        #region COMMANDS
+        public ICommand AlimentarPetCommand => new Command(async () => await AlimentarPet());
+   //     public ICommand OpenEditViewcommand => new Command(async () => await OpenViewEdit());
+        public ICommand GoToProfileCommand => new Command(async () => await GoToPetProfile());
             #endregion
         
     }

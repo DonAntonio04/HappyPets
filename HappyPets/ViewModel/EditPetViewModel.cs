@@ -1,4 +1,6 @@
-﻿using HappyPets.Views.MainMenu.PetProfiles;
+﻿using HappyPets.Datos;
+using HappyPets.Models;
+using HappyPets.Views.MainMenu.PetProfiles;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,6 +15,9 @@ namespace HappyPets.ViewModel
         #region VARIABLES
         string _Name;
         string _Race;
+        string _Age;
+        string _Size;
+        PetsModel _SelectPet;
         #endregion
 
         #region CONSTRUCTOR
@@ -20,6 +25,16 @@ namespace HappyPets.ViewModel
         {
             Navigation = navigation;
         }
+        public EditPetViewModel(PetsModel petselect,INavigation navigation)
+        {
+            Navigation = navigation;
+
+            _Name = petselect.PetName.ToString();
+            _Race = petselect.PetRaze.ToString();
+            _Age = petselect.PetAge.ToString();
+            _Size = petselect.PetSize.ToString();
+        }
+
         #endregion
 
         #region OBJECTS
@@ -33,15 +48,52 @@ namespace HappyPets.ViewModel
             get { return _Race; }
             set { SetValue(ref _Race, value); }
         }
-        #endregion
-        #region METHODS
-        public async Task GoToEdit()
+        public string Age
         {
-            await Navigation.PushAsync(new EditPet());
+            get { return _Age; }
+            set { SetValue(ref _Age, value);}
+        }
+        public string Size
+        {
+            get { return _Size; }
+            set { SetValue(ref _Size, value);}
+        }
+
+        public PetsModel SelectPets
+        {
+            get { return _SelectPet; }
+            set {  SetValue(ref _SelectPet, value);}
         }
         #endregion
+        #region METHODS
+
+        public async Task EditPet()
+        {
+            var parametros = new DatosPets();
+            SelectPets.PetName = Name;
+            SelectPets.PetAge = Age;
+            SelectPets.PetRaze = Race;
+            SelectPets.PetSize = Size;
+            await parametros.EditPets(SelectPets);
+           
+        }
+
+        public async Task DeletePet()
+        {
+            var parametros = new DatosPets();
+            await parametros.DeletePets(SelectPets.IdPet);
+            await DisplayAlert("Eliminado", $"La mascota con el nombre {SelectPets.PetName} eliminado", "Ok");
+        }
+
+        //public async Task GoToEdit()
+        //{
+        //    await Navigation.PushAsync(new EditPet());
+        //}
+        #endregion
         #region COMMANDS
-        public ICommand GoToEditcommand => new Command(async () => await GoToEdit());
+        //public ICommand GoToEditcommand => new Command(async () => await GoToEdit());
+        public ICommand EditPetcommand => new Command(async () => await EditPet());
+        public ICommand DeletePetcomand => new Command(async () => await DeletePet());
         #endregion
     }
 }

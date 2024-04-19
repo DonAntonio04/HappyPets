@@ -1,12 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HappyPets.Views.MainMenu.PetProfiles.PetProfile">
+             x:Class="HappyPets.Views.MainMenu.PetProfiles.PetProfile"
+              NavigationPage.HasNavigationBar="False"
+             >
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Camara" Order="Secondary" Command="{Binding GoToCameraCommand}"/>
         <ToolbarItem Text="Estadisticas" Order="Secondary" Command="{Binding GoToStatisticsCommand}"/>
-        <ToolbarItem Text="Dispensador" Order="Secondary" Command="{Binding GoToDispenserCommand}"/>
+       <!-- <ToolbarItem Text="Dispensador" Order="Secondary" Command="{Binding GoToDispenserCommand}"/> -->
     </ContentPage.ToolbarItems>
     <StackLayout>
         <Frame HeightRequest="300"
@@ -26,7 +28,7 @@
                    VerticalOptions="Start"
                    HorizontalOptions="Center" />
         </Frame>
-        <Label Text="{Binding NameOfPet}"
+        <Label Text="{Binding PetName}"
                TextColor="#000"
                FontSize="Title"
           
@@ -56,7 +58,7 @@
                  
                        Grid.Column="0"
                        Grid.Row="3"/>
-                <Label Text="Perro"
+                <Label Text="{Binding PetRaze}"
                        FontSize="Large"
                        TextColor="#fff"
                        FontAttributes="Bold"
@@ -73,7 +75,7 @@
                  
                        Grid.Column="0"
                        Grid.Row="1"/>
-                <Label Text="1 año"
+                <Label Text="{Binding PetAge}"
                        FontSize="Large"
                        TextColor="#fff"
                        FontAttributes="Bold"

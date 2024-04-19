@@ -68,7 +68,7 @@ namespace HappyPets.ViewModel
         //public ICommand GoToCameraCommand => new Command(async (pet) => await GoToPetCamera());
         public ICommand GoToStatisticsCommand => new Command(async () => await GoToStatisticsPet());
        
-        public ICommand GoToEditCommand => new Command(async () => await GoToEdit());
+       public ICommand GoToEditCommand => new Command(async () => await GoToEdit());
 
 
 

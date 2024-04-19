@@ -30,7 +30,7 @@ namespace HappyPets.Datos
 
 
         }
-        public async Task EditPet(PetsModel newdata)
+        public async Task EditPets(PetsModel newdata)
         {
             var update = (await Cconexion.firebase
                 .Child("Pets")
@@ -52,7 +52,7 @@ namespace HappyPets.Datos
                 });
         }
 
-        public async Task DeletePet(Guid idPet)
+        public async Task DeletePets(Guid idPet)
         {
             var petDelete = (await Cconexion.firebase
                 .Child("Pets")

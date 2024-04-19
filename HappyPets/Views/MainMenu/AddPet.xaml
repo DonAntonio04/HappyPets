@@ -3,11 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HappyPets.Views.MainMenu.AddPet">
     <StackLayout>
+        <ScrollView>
         <Grid>
+            
             <Frame BackgroundColor="#ff7711"
                Margin="10,155,10,50"
                BorderColor="Black">
                 <StackLayout>
+                    
                     <Label Text="Name of Dog" TextColor="White"/>
                     <Frame BackgroundColor="#000"
                        Margin="0,0,0,10">
@@ -47,24 +50,26 @@
                                FontSize="Medium"
                             />
                     </Frame>
-
-                    <Picker Title="Dispensador"
-                        TitleColor="White"
-                        FontSize="Large"
-                        TextColor="White">
-                        <Picker.ItemsSource >
-                            <x:Array Type="{x:Type x:String}">
-                                <x:String>Default</x:String>
-                                <x:String>Baboon</x:String>
-                                <x:String>Capuchin Monkey</x:String>
-                                <x:String>Blue Monkey</x:String>
-                                <x:String>Squirrel Monkey</x:String>
-                                <x:String>Golden Lion Tamarin</x:String>
-                                <x:String>Howler Monkey</x:String>
-                                <x:String>Japanese Macaque</x:String>
-                            </x:Array>
-                        </Picker.ItemsSource>
-                    </Picker>
+                    <StackLayout>
+                        <Picker Title="Dispensador"
+                          TitleColor="White"
+                           FontSize="Large"
+                            TextColor="White">
+                            <Picker.ItemsSource >
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Default</x:String>
+                                    <x:String>Baboon</x:String>
+                                    <x:String>Capuchin Monkey</x:String>
+                                    <x:String>Blue Monkey</x:String>
+                                    <x:String>Squirrel Monkey</x:String>
+                                    <x:String>Golden Lion Tamarin</x:String>
+                                    <x:String>Howler Monkey</x:String>
+                                    <x:String>Japanese Macaque</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                    </StackLayout>
+                    
 
                     <Button Text="Register"
                         Margin="0,10,0,0"
@@ -93,6 +98,7 @@
                    HorizontalOptions="Center" />
             </Frame>
         </Grid>
+        </ScrollView>
     </StackLayout>
 
 
