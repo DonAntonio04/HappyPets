@@ -17,7 +17,7 @@ namespace HappyPets.Views.MainMenu
         public DeletePet(PetsModel pets)
         {
             InitializeComponent();
-            BindingContext = new EditPetViewModel(pets,Navigation);
+         //  BindingContext = new EditPetViewModel(pets,Navigation);
         }
     }
 }

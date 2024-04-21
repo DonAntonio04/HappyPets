@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HappyPets.Views.MainMenu.PetProfiles.EditPet">
+             x:Class="HappyPets.Views.MainMenu.PetProfiles.EditPet"
+              BackgroundImageSource="https://i.ibb.co/PcBbDDM/fondocolor.png"
+             >
     <StackLayout>
         <Frame HeightRequest="200"
                WidthRequest="200"
@@ -38,6 +40,7 @@
                        FontSize="Title"
                        TextColor="White"/>
                 <Entry Placeholder="nuevo nombre"
+                       Text="{Binding Name}"
                        FontSize="Title"
                        TextColor="#ff7711"/>
             </StackLayout>
@@ -56,7 +59,7 @@
                        
                            />
 
-                <Entry Text="Perro"
+                <Entry Text="{Binding Race}"
                            FontSize="Large"
                            TextColor="#fff"
                            FontAttributes="Bold"
@@ -69,7 +72,7 @@
                            FontAttributes="Bold"
                            Margin="0,10"
                           />
-                <Entry Text="1 año"
+                <Entry Text="{Binding Age}"
                            FontSize="Large"
                            TextColor="#fff"
                            FontAttributes="Bold"
@@ -101,6 +104,8 @@
                 BorderWidth="2"
                 FontSize="Title"
                 FontAttributes="Bold"
-                VerticalOptions="Center"/>
+                VerticalOptions="Center"
+                 Command="{Binding EditPetcommand }"
+                />
     </StackLayout>
 </ContentPage>

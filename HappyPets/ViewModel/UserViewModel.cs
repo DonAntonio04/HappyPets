@@ -1,7 +1,10 @@
-﻿using HappyPets.Views.LoginFolder;
+﻿using HappyPets.Datos;
+using HappyPets.Models;
+using HappyPets.Views.LoginFolder;
 using HappyPets.Views.MainMenu;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -16,17 +19,41 @@ namespace HappyPets.ViewModel
         public string _email;
         public string _password;
         public int _phoneNumber;
+        UsersModel _Selectusers;
 
+
+        ObservableCollection<UsersModel> _Listusers;
         #endregion
 
         #region CONSTRUCTOR
         public UserViewModel(INavigation navigation)
         {
             Navigation = navigation;
+            MostrarUsers();
         }
         #endregion
 
         #region OBJECTS
+        public ObservableCollection<UsersModel> Listusers
+        {
+            get { return _Listusers; }
+            set
+            {
+                SetValue(ref _Listusers, value);
+                OnpropertyChanged();
+            }
+        }
+        public UsersModel SelectUsers
+        {
+            get { return _Selectusers; }
+            set
+            {
+                if (_Selectusers != value)
+                {
+                    _Selectusers = value;
+                }
+            }
+        }
         #endregion
 
         #region METHODS
@@ -34,6 +61,14 @@ namespace HappyPets.ViewModel
         {
             await Navigation.PushAsync(new Login());
         }
+
+        public async Task MostrarUsers()
+        {
+            var funcion = new DatosUsers();
+            var usuario = await funcion.MostrarUsers();
+            Listusers = usuario;
+        }
+
         public async Task EditarUsuario()
         {
             await Navigation.PushAsync(new EditUser());

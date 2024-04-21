@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HappyPets.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace HappyPets.Views.MainMenu
         public Users()
         {
             InitializeComponent();
+            BindingContext = new UserViewModel(Navigation);
         }
     }
 }

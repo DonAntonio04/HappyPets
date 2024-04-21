@@ -1,6 +1,5 @@
 ﻿using HappyPets.Datos;
 using HappyPets.Models;
-using HappyPets.Views.MainMenu.PetProfiles;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,7 +9,7 @@ using Xamarin.Forms;
 
 namespace HappyPets.ViewModel
 {
-    public class EditPetViewModel : BaseViewModel
+    public class DeletePetViiewModel : BaseViewModel
     {
         #region VARIABLES
         string _Name;
@@ -21,15 +20,15 @@ namespace HappyPets.ViewModel
         #endregion
 
         #region CONSTRUCTOR
-     
-        public EditPetViewModel(PetsModel petselect,INavigation navigation)
+
+        public DeletePetViiewModel(PetsModel petselect, INavigation navigation)
         {
             Navigation = navigation;
 
             _Name = petselect.PetName.ToString();
             _Race = petselect.PetRaze.ToString();
             _Age = petselect.PetAge.ToString();
-           // _Size = petselect.PetSize.ToString();
+            // _Size = petselect.PetSize.ToString();
             _SelectPet = petselect;
         }
 
@@ -49,18 +48,18 @@ namespace HappyPets.ViewModel
         public string Age
         {
             get { return _Age; }
-            set { SetValue(ref _Age, value);}
+            set { SetValue(ref _Age, value); }
         }
         public string Size
         {
             get { return _Size; }
-            set { SetValue(ref _Size, value);}
+            set { SetValue(ref _Size, value); }
         }
 
         public PetsModel SelectPets
         {
             get { return _SelectPet; }
-            set {  SetValue(ref _SelectPet, value);}
+            set { SetValue(ref _SelectPet, value); }
         }
         #endregion
         #region METHODS
@@ -71,7 +70,7 @@ namespace HappyPets.ViewModel
             SelectPets.PetName = Name;
             SelectPets.PetAge = Age;
             SelectPets.PetRaze = Race;
-        //    SelectPets.PetSize = Size;
+            //    SelectPets.PetSize = Size;
             await parametros.EditPets(SelectPets);
             await DisplayAlert("Exito", "Se ha actualizado", "Ok");
         }
@@ -82,14 +81,10 @@ namespace HappyPets.ViewModel
             await parametros.DeletePets(SelectPets.IdPet);
             await DisplayAlert("Eliminado", $"La mascota con el nombre {SelectPets.PetName} eliminado", "Ok");
         }
-
-        public async Task GoToEdit()
-        {
-            await Navigation.PushAsync(new EditPet(SelectPets));
-        }
         #endregion
+
         #region COMMANDS
-        public ICommand GoToEditcommand => new Command(async () => await GoToEdit());
+  
         public ICommand EditPetcommand => new Command(async () => await EditPet());
         public ICommand DeletePetcomand => new Command(async () => await DeletePet());
         #endregion

@@ -14,10 +14,10 @@ namespace HappyPets.Views.MainMenu.PetProfiles
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PetProfile : ContentPage
     {
-        public PetProfile(ReferenceToObservableCollection dataOfPet)
+        public PetProfile(PetsModel pets)
         {
             InitializeComponent();
-            BindingContext = new PetProfileViewModel(Navigation, dataOfPet.Imagen, dataOfPet.Nombre);
+            BindingContext = new EditPetViewModel(pets, Navigation);
         }
     }
 }

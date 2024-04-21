@@ -14,10 +14,11 @@ namespace HappyPets.Views.MainMenu.PetProfiles
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EditPet : ContentPage
     {
-        public EditPet()
+        public EditPet(PetsModel pet)
         {
             InitializeComponent();
-            BindingContext = new EditPetViewModel(Navigation);
+          //  BindingContext = new EditPetViewModel(pet,Navigation);
+          BindingContext = new DeletePetViiewModel(pet,Navigation);
         }
     }
 }

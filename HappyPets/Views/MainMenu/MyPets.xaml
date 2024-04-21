@@ -1,10 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HappyPets.Views.MainMenu.MyPets">
-    <Grid RowDefinitions="60,*"
-      BackgroundColor="Orange">
+             x:Class="HappyPets.Views.MainMenu.MyPets"
+              BackgroundImageSource="https://i.ibb.co/PcBbDDM/fondocolor.png"
+             >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
+        <!-- Encabezado -->
         <Label Text="My Pets"
            HorizontalOptions="Center"
            VerticalOptions="Center"
@@ -12,11 +18,14 @@
            FontAttributes="Bold"
            TextColor="Black"/>
 
-        <CollectionView BackgroundColor="#EAEDEC"
-                    Grid.Row="1"
+        <!-- Colección de vista de mascotas -->
+        <CollectionView Grid.Row="1"
                     ItemsSource="{Binding Listpets}"
+                    SelectionMode="Single"
                     Margin="0,10,0,0"
-                    SelectionMode="Single">
+                    SelectedItem="{Binding SelectPets}"
+                    SelectionChangedCommand="{Binding  GoToProfileCommand}"
+                        >
             <CollectionView.ItemsLayout>
                 <GridItemsLayout Orientation="Vertical"
                              Span="2"
@@ -25,50 +34,51 @@
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Frame BackgroundColor="Orange"
+                    <Frame BackgroundColor="#F5F5F5"
                        CornerRadius="10"
-                       Padding="35"
-                       Margin="10">
+                       Padding="20"
+                       Margin="10,10,10,0">
                         <StackLayout VerticalOptions="Center">
                             <Label Text="Name:"
-                               LineBreakMode="WordWrap"
-                               Margin="10,0,10,10" />
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               Margin="0,0,0,5" />
                             <Label Text="{Binding PetName}"
-                               FontSize="Small"
-                               LineBreakMode="WordWrap"
-                               Margin="10,0,10,10"  />
+                               FontSize="14"
+                               Margin="0,0,0,10" />
+
                             <Label Text="Edad:"
-                               LineBreakMode="WordWrap"
-                               Margin="10,0,10,10" />
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               Margin="0,10,0,5" />
                             <Label Text="{Binding PetAge}"
-                               FontSize="Small"
-                               LineBreakMode="WordWrap"
-                               Margin="10,0,10,10" />
+                               FontSize="14"
+                               Margin="0,0,0,10" />
+
                             <Label Text="Raza:"
-                               FontSize="Small"
-                               LineBreakMode="WordWrap"
-                               Margin="10,0,10,10" />
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               Margin="0,10,0,5" />
                             <Label Text="{Binding PetRaze}"
-                               FontSize="Small"
-                               LineBreakMode="WordWrap"
-                               Margin="10,0,10,10" />
+                               FontSize="14"
+                               Margin="0,0,0,10" />
+
                             <Label Text="Tamaño:"
-                               FontSize="Small"
-                               Margin="10,0,10,10"/>
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               Margin="0,10,0,5" />
                             <Label Text="{Binding PetSize}"
-                               FontSize="Small"
-                               Margin="10,0,10,10"/>
+                               FontSize="14"
+                               Margin="0,0,0,10" />
                         </StackLayout>
                     </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-
     </Grid>
 
 
 
 
 
-  
 </ContentPage>

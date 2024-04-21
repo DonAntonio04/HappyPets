@@ -17,8 +17,8 @@ namespace HappyPets.ViewModel
 
         #region VARIABLES
         PetsModel _Selectpets;
-            private ObservableCollection<ReferenceToObservableCollection> _mascotasDeEjemplo;
-            private ReferenceToObservableCollection _petSelect;
+          //  private ObservableCollection<ReferenceToObservableCollection> _mascotasDeEjemplo;
+           // private ReferenceToObservableCollection _petSelect;
           ObservableCollection<PetsModel> _Listpets;
         #endregion
 
@@ -39,16 +39,16 @@ namespace HappyPets.ViewModel
         #endregion
 
         #region OBJECTS
-        public ObservableCollection<ReferenceToObservableCollection> MascotasDeEjemplo
-            {
-                get { return _mascotasDeEjemplo; }
-                set { SetValue(ref _mascotasDeEjemplo, value); }
-            }
-            public ReferenceToObservableCollection PetSelect
-            {
-                get { return _petSelect; }
-                set { SetValue(ref _petSelect, value); }
-            }
+        //public ObservableCollection<ReferenceToObservableCollection> MascotasDeEjemplo
+        //    {
+        //        get { return _mascotasDeEjemplo; }
+        //        set { SetValue(ref _mascotasDeEjemplo, value); }
+        //    }
+        //    public ReferenceToObservableCollection PetSelect
+        //    {
+        //        get { return _petSelect; }
+        //        set { SetValue(ref _petSelect, value); }
+        //    }
 
         public ObservableCollection<PetsModel> Listpets
         {
@@ -73,28 +73,28 @@ namespace HappyPets.ViewModel
         #endregion
 
         #region METHODS
-        public ObservableCollection<ReferenceToObservableCollection> MostrarImagenes()
-        {
-            return new ObservableCollection<ReferenceToObservableCollection>
-            {
-                new ReferenceToObservableCollection
-                {
-                    Imagen = "chiquinunis.jpge",
-                    Nombre = "chiquinunis 1"
-                },
-                new ReferenceToObservableCollection
-                {
-                    Imagen = "chiquinunis.jpge",
-                    Nombre = "chiquinunis 2"
-                },
-                new ReferenceToObservableCollection
-                {
-                    Imagen = "chiquinunis.jpge",
-                    Nombre = "chiquinunis 3"
-                }
-            };
-        }
-        public async Task AlimentarPet()
+        //public ObservableCollection<ReferenceToObservableCollection> MostrarImagenes()
+        //{
+        //    return new ObservableCollection<ReferenceToObservableCollection>
+        //    {
+        //        new ReferenceToObservableCollection
+        //        {
+        //            Imagen = "chiquinunis.jpge",
+        //            Nombre = "chiquinunis 1"
+        //        },
+        //        new ReferenceToObservableCollection
+        //        {
+        //            Imagen = "chiquinunis.jpge",
+        //            Nombre = "chiquinunis 2"
+        //        },
+        //        new ReferenceToObservableCollection
+        //        {
+        //            Imagen = "chiquinunis.jpge",
+        //            Nombre = "chiquinunis 3"
+        //        }
+        //    };
+        //}
+            public async Task AlimentarPet()
             {
                 await DisplayAlert("Listo", "se ha alimentado correctamente tu mascota", "OK");
             }
@@ -112,18 +112,14 @@ namespace HappyPets.ViewModel
 
             public async Task GoToPetProfile()
             {
-                await Navigation.PushAsync(new PetProfile(_petSelect));
+                await Navigation.PushAsync(new PetProfile(SelectPets));
             }
-        //public async Task OpenViewEdit()
-        //{
-        //    await Navigation.PushAsync(new EditPet(SelectPets));
-        //}
-
+ 
         #endregion
 
         #region COMMANDS
         public ICommand AlimentarPetCommand => new Command(async () => await AlimentarPet());
-   //     public ICommand OpenEditViewcommand => new Command(async () => await OpenViewEdit());
+     //  public ICommand OpenEditViewcommand => new Command(async () => await OpenViewEdit());
         public ICommand GoToProfileCommand => new Command(async () => await GoToPetProfile());
             #endregion
         
