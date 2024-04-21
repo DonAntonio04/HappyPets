@@ -91,7 +91,7 @@
             <Button Margin="-1,0,0,0"
             Text="Eliminar Masco."
             FontSize="Medium"
-            Command="{Binding DeleteCommand}"
+            Command="{Binding DeletePetcomand}"
             FontAttributes="Bold"
             TextColor="#ff7711"
             BorderColor="Black"

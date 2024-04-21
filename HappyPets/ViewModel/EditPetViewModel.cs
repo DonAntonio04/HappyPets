@@ -1,5 +1,6 @@
 ﻿using HappyPets.Datos;
 using HappyPets.Models;
+using HappyPets.Views.MainMenu;
 using HappyPets.Views.MainMenu.PetProfiles;
 using System;
 using System.Collections.Generic;
@@ -74,6 +75,7 @@ namespace HappyPets.ViewModel
         //    SelectPets.PetSize = Size;
             await parametros.EditPets(SelectPets);
             await DisplayAlert("Exito", "Se ha actualizado", "Ok");
+            
         }
 
         public async Task DeletePet()
