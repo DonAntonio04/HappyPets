@@ -1,6 +1,7 @@
 ﻿using HappyPets.Datos;
 using HappyPets.Models;
 using HappyPets.Views.MainMenu;
+using HappyPets.Views.MainMenu.PetProfiles;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -84,12 +85,28 @@ namespace HappyPets.ViewModel
             await DisplayAlert("Eliminado", $"La mascota con el nombre {SelectPets.PetName} eliminado", "Ok");
             await Navigation.PushAsync(new MyPets());
         }
+
+        public async Task GoToStatisticsPet()
+        {
+            await Navigation.PushAsync(new PetStastiscs());
+        }
+
+
+        public async Task GoToDispenserConfig()
+        {
+            await Navigation.PushAsync(new ConfigDispenser());
+        }
+
         #endregion
 
         #region COMMANDS
-  
+
         public ICommand EditPetcommand => new Command(async () => await EditPet());
         public ICommand DeletePetcomand => new Command(async () => await DeletePet());
+        public ICommand GoToStatisticsCommand => new Command(async () => await GoToStatisticsPet());
+
+        // public ICommand GoToEditCommand => new Command(async () => await GoToEdit());
+        public ICommand GoToDispenserCommand => new Command(async () => await GoToDispenserConfig());
         #endregion
     }
 }

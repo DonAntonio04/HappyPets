@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HappyPets.Views.MainMenu.PetProfiles.PetProfile"
-              NavigationPage.HasNavigationBar="False"
+            
           BackgroundImageSource="https://i.ibb.co/PcBbDDM/fondocolor.png"
             
              >
@@ -10,96 +10,95 @@
         <ToolbarItem Text="Camara" Order="Secondary" Command="{Binding GoToCameraCommand}"/>
         <ToolbarItem Text="Estadisticas" Order="Secondary" Command="{Binding GoToStatisticsCommand}"/>
         <ToolbarItem Text="Dispensador" Order="Secondary" Command="{Binding GoToDispenserCommand}"/>
-    </ContentPage.ToolbarItems>
-    
+    </ContentPage.ToolbarItems> 
     <StackLayout>
         <Frame HeightRequest="300"
-             WidthRequest="300"
-             CornerRadius="150"
-             HorizontalOptions="Center"
-             VerticalOptions="Center"
-             IsClippedToBounds="True"
-             Padding="0"
-             BorderColor="Gray"
-             Margin="0,15">
+           WidthRequest="300"
+           CornerRadius="150"
+           HorizontalOptions="Center"
+           VerticalOptions="Center"
+           IsClippedToBounds="True"
+           Padding="0"
+           BorderColor="Gray"
+           Margin="0,15">
             <Image Aspect="AspectFit"
-                 Source="{Binding Image}"
-             
-                 HeightRequest="400"
-                 WidthRequest="400"
-                 VerticalOptions="Start"
-                 HorizontalOptions="Center" />
+               Source="{Binding Image}"
+           
+               HeightRequest="400"
+               WidthRequest="400"
+               VerticalOptions="Start"
+               HorizontalOptions="Center" />
         </Frame>
         <Label Text="{Binding Name}"
-             TextColor="#000"
-             FontSize="Title"
-   
-             HorizontalTextAlignment="Center"
-             Margin="0,0,0,0"
-             FontAttributes="Bold"/>
+           TextColor="#000"
+           FontSize="Title"
+ 
+           HorizontalTextAlignment="Center"
+           Margin="0,0,0,0"
+           FontAttributes="Bold"/>
         <Frame BackgroundColor="#ff7711"
-             Margin="15,10,15,0"
-             BorderColor="Black">
+           Margin="15,10,15,0"
+           BorderColor="Black">
             <Grid RowDefinitions="50,*"
-                ColumnDefinitions="200,200">
+              ColumnDefinitions="200,200">
 
                 <Label Text="Raza:"
-                     FontSize="Large"
-                     TextColor="#fff"
-                     FontAttributes="Bold"
-                     Margin="5,10"
-                     Grid.Column="0"
-                     Grid.Row="0"/>
+                   FontSize="Large"
+                   TextColor="#fff"
+                   FontAttributes="Bold"
+                   Margin="5,10"
+                   Grid.Column="0"
+                   Grid.Row="0"/>
 
-               
+
                 <Label Text="{Binding Race}"
-                     FontSize="Large"
-                     TextColor="#fff"
-                     FontAttributes="Bold"
-                     Margin="50,10,0,10"
-          
-                     Grid.Column="1"
-                     Grid.Row="0"
-                     TextDecorations="Underline"/>
+                   FontSize="Large"
+                   TextColor="#fff"
+                   FontAttributes="Bold"
+                   Margin="50,10,0,10"
+        
+                   Grid.Column="1"
+                   Grid.Row="0"
+                   TextDecorations="Underline"/>
                 <Label Text="Edad:"
-                     FontSize="Large"
-                     TextColor="#fff"
-                     FontAttributes="Bold"
-                     Margin="5,10"
-            
-                     Grid.Column="0"
-                     Grid.Row="1"/>
+                   FontSize="Large"
+                   TextColor="#fff"
+                   FontAttributes="Bold"
+                   Margin="5,10"
+          
+                   Grid.Column="0"
+                   Grid.Row="1"/>
                 <Label Text="{Binding Age}"
-                     FontSize="Large"
-                     TextColor="#fff"
-                     FontAttributes="Bold"
-                     Margin="50,10,0,10"
-         
-                     Grid.Column="1"
-                     Grid.Row="1"
-                     TextDecorations="Underline"/>
+                   FontSize="Large"
+                   TextColor="#fff"
+                   FontAttributes="Bold"
+                   Margin="50,10,0,10"
+       
+                   Grid.Column="1"
+                   Grid.Row="1"
+                   TextDecorations="Underline"/>
             </Grid>
         </Frame>
         <StackLayout Margin="0,110,0,0" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
             <Button Margin="-1,0,0,0"
-            Text="Eliminar Masco."
-            FontSize="Medium"
-            Command="{Binding DeletePetcomand}"
-            FontAttributes="Bold"
-            TextColor="#ff7711"
-            BorderColor="Black"
-            BorderWidth="2"
-            BackgroundColor="White"/>
+          Text="Eliminar Masco."
+          FontSize="Medium"
+          Command="{Binding DeletePetcomand}"
+          FontAttributes="Bold"
+          TextColor="#ff7711"
+          BorderColor="Black"
+          BorderWidth="2"
+          BackgroundColor="White"/>
 
             <Button Margin="-1,0,0,0"
-            Text="Editar Mascota."
-            FontSize="Medium"
-            Command="{Binding GoToEditcommand}"
-            FontAttributes="Bold"
-            TextColor="#ff7711"
-            BorderColor="Black"
-            BorderWidth="2"
-            BackgroundColor="White"/>
+          Text="Editar Mascota."
+          FontSize="Medium"
+          Command="{Binding GoToEditcommand}"
+          FontAttributes="Bold"
+          TextColor="#ff7711"
+          BorderColor="Black"
+          BorderWidth="2"
+          BackgroundColor="White"/>
         </StackLayout>
 
     </StackLayout>

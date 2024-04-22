@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HappyPets.Views.MainMenu.PetProfiles.ConfigDispenser"
+              BackgroundImageSource="https://i.ibb.co/PcBbDDM/fondocolor.png"
+             >
+
+
+    <ScrollView>
+        <StackLayout>
+
+            <!--flata agregar una flecha hacia tras para volver-->
+            <Label Text="Dispensador"
+     FontSize="Title"
+     FontAttributes="Bold"
+     TextColor="Black"
+     HorizontalOptions="Center"
+     Margin="0,20,0,0"/>
+            <StackLayout>
+                <Frame Margin="30,20,30,0"
+            BackgroundColor="#ff7711"
+            BorderColor="Black">
+
+                    <Picker Title="Configuracion"
+              TitleColor="Black"
+              Margin="0,0,0,0"
+              FontSize="Title"
+              HorizontalTextAlignment="Center">
+                        <Picker.Items>
+                            <!--lista de items que podemos agregar-->
+                        </Picker.Items>
+                    </Picker>
+
+                </Frame>
+                <Frame Margin="30,30,30,0"
+            BackgroundColor="#ff7711"
+            BorderColor="Black">
+                    <StackLayout>
+                        <Label Text="Cantidad de comida"
+                 FontSize="Title"
+                 FontAttributes="Bold"
+                 TextColor="Black"/>
+                        <Entry Placeholder="Cantidad (kg)"
+                    TextColor="White"
+                    FontSize="Title"
+                    PlaceholderColor="White"/>
+
+                        <Label Text="Veces Al Dia"
+                 FontSize="Title"
+                 FontAttributes="Bold"
+                 TextColor="Black"/>
+                        <Entry Placeholder="N (veces)"
+                    FontSize="Title"
+                    PlaceholderColor="White"
+                    TextColor="White"/>
+                        <Label Text="Tiempo entre comidas"
+                 FontSize="Title"
+                 FontAttributes="Bold"
+                 TextColor="Black"/>
+                        <Entry Placeholder="Tiempo (hrs)"
+                    TextColor="White"
+                    PlaceholderColor="White"
+                    FontSize="Title"/>
+
+                    </StackLayout>
+
+                </Frame>
+
+                <Button Margin="50,20"
+              Text="Agregar"
+              CornerRadius="50"
+              BorderColor="Black"
+              BorderWidth="2"
+              FontAttributes="Bold"
+              Background="white"
+              TextColor="DarkOrange"
+              />
+                <Button Margin="50,10"
+              Text="Editar"
+              CornerRadius="50"
+              BorderColor="Black"
+              BorderWidth="2"
+              FontAttributes="Bold"
+              Background="white"
+              TextColor="DarkOrange"
+              />
+                <Button Margin="50,10"
+              Text="Eliminar"
+              CornerRadius="50"
+              BorderColor="Black"
+              BorderWidth="2"
+              FontAttributes="Bold"
+              Background="white"
+              TextColor="DarkOrange"
+               
+             />
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
+    
+    
+</ContentPage>

@@ -16,12 +16,12 @@ namespace HappyPets.ViewModel
         #endregion
 
         #region CONSTRUCTOR
-        //public PetProfileViewModel(INavigation navigation, string image, string name)
-        //{
-        //    Navigation = navigation;
-        //    _image = image;
-        //    _nameOfPet = name;
-        //}
+        public PetProfileViewModel(INavigation navigation, string image, string name)
+        {
+            Navigation = navigation;
+            _image = image;
+            _nameOfPet = name;
+        }
         #endregion
 
         #region OBJECTS
@@ -54,10 +54,11 @@ namespace HappyPets.ViewModel
             await Navigation.PushAsync(new PetStastiscs());
         }
 
-        //public async Task GoToEdit()
-        //{
-        //    await Navigation.PushAsync(new EditPet());
-        //}
+     
+        public async Task GoToDispenserConfig()
+        {
+            await Navigation.PushAsync(new ConfigDispenser());
+        }
 
 
         #endregion
@@ -67,9 +68,9 @@ namespace HappyPets.ViewModel
         public ICommand DeleteCommand => new Command(async () => await PetToDelete());
         //public ICommand GoToCameraCommand => new Command(async (pet) => await GoToPetCamera());
         public ICommand GoToStatisticsCommand => new Command(async () => await GoToStatisticsPet());
-       
-      // public ICommand GoToEditCommand => new Command(async () => await GoToEdit());
 
+        // public ICommand GoToEditCommand => new Command(async () => await GoToEdit());
+        public ICommand GoToDispenserCommand => new Command(async () => await GoToDispenserConfig());
 
 
         #endregion
