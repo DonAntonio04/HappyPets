@@ -5,6 +5,7 @@ using HappyPets.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
@@ -61,6 +62,23 @@ namespace HappyPets.Datos
             .AsObservableCollection());
             return data;
         }
+
+        //public async Task<UsersModel> MostrarUserLogueado(string userId)
+        //{
+        //    var data = await Task.Run(() => Cconexion.firebase
+        //    .Child("Users")
+        //    .Child(userId)
+        //    .OnceAsync<UsersModel>());
+
+        //    if (data != null && data.Any())
+        //    {
+        //        return data.First().Object;
+        //    }
+
+        //    return null;
+        //}
+
+
 
     }
 }

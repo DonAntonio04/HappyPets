@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HappyPets.Views.MainMenu.AddPet"
               BackgroundImageSource="https://i.ibb.co/PcBbDDM/fondocolor.png"
+             IconImageSource="https://i.ibb.co/qRTRpCG/boton-agregar.png"
              >
     <StackLayout>
         <ScrollView>
@@ -84,21 +85,14 @@
                         BorderWidth="2"/>
                 </StackLayout>
             </Frame>
-            <Frame HeightRequest="140"
-               WidthRequest="140"
-               CornerRadius="70"
-               HorizontalOptions="Center"
-               IsClippedToBounds="True"
-               Padding="0"
-               BorderColor="Black"
-               Margin="0,5,0,600">
+            
                 <Image Aspect="AspectFit"
-                   Source="dotnet_bot.png"
+                   Source="https://i.ibb.co/VtYPz6w/pista.png"
                    HeightRequest="140"
                    WidthRequest="140"
-                   VerticalOptions="Center"
+                   VerticalOptions="Start"
                    HorizontalOptions="Center" />
-            </Frame>
+            
         </Grid>
         </ScrollView>
     </StackLayout>

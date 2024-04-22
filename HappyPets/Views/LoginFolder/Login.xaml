@@ -74,22 +74,16 @@
                 -->
             </StackLayout>
         </Frame>
-        <Frame HeightRequest="300"
-               WidthRequest="130"
-               CornerRadius="25"
-               HorizontalOptions="Center"
-               IsClippedToBounds="True"
-               Padding="0"
-               BorderColor="Black"
-               Margin="0,0,0,600">
+       
         
              <Image Aspect="AspectFit"
                    Source="https://i.ibb.co/2jjvctd/usuario.png"
                    HeightRequest="130"
                    WidthRequest="140"
-                   VerticalOptions="Center"
+                    Margin="10,20,0,0"
+                   VerticalOptions="Start"
                    HorizontalOptions="Center" />
             
-        </Frame>
+       
     </Grid>
 </ContentPage>

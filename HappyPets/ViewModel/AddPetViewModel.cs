@@ -1,5 +1,6 @@
 ﻿using HappyPets.Datos;
 using HappyPets.Models;
+using HappyPets.Views.MainMenu;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -69,7 +70,7 @@ namespace HappyPets.ViewModel
             await function.InsertPet(parametros);
 
             await DisplayAlert("Registro Exitoso!", $"tu mascota se a registrado correctamente", "OK");
-            await Navigation.PopAsync();
+            await Navigation.PushAsync(new MyPets());
         }
         #endregion
 

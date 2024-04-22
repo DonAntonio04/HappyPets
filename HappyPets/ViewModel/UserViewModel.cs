@@ -1,4 +1,5 @@
-﻿using HappyPets.Datos;
+﻿using Firebase.Auth;
+using HappyPets.Datos;
 using HappyPets.Models;
 using HappyPets.Views.LoginFolder;
 using HappyPets.Views.MainMenu;
@@ -20,16 +21,18 @@ namespace HappyPets.ViewModel
         public string _password;
         public int _phoneNumber;
         UsersModel _Selectusers;
+        UsersModel _LoggedInUser;
 
 
         ObservableCollection<UsersModel> _Listusers;
         #endregion
 
         #region CONSTRUCTOR
-        public UserViewModel(INavigation navigation)
+        public UserViewModel(INavigation navigation/*, string userId*/)
         {
             Navigation = navigation;
             MostrarUsers();
+            //MostrarUserLogueado(userId);
         }
         #endregion
 
@@ -54,6 +57,17 @@ namespace HappyPets.ViewModel
                 }
             }
         }
+        //public UsersModel LoggedInUser
+        //{
+        //    get { return _LoggedInUser; }
+        //    set
+        //    {
+        //        SetValue(ref _LoggedInUser, value);
+        //        OnPropertyChanged();
+        //    }
+        //}
+
+
         #endregion
 
         #region METHODS
@@ -68,11 +82,18 @@ namespace HappyPets.ViewModel
             var usuario = await funcion.MostrarUsers();
             Listusers = usuario;
         }
+        //public async Task MostrarUserLogueado(string userId)
+        //{
+        //    var funcion = new DatosUsers();
+        //    var usuario = await funcion.MostrarUserLogueado(userId);
+        //    LoggedInUser = usuario;
+        //}
 
         public async Task EditarUsuario()
         {
             await Navigation.PushAsync(new EditUser());
         }
+     
         #endregion
 
         #region COMMANDS

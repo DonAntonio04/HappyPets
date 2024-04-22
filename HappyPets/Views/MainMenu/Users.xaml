@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HappyPets.Views.MainMenu.Users"
               BackgroundImageSource="https://i.ibb.co/PcBbDDM/fondocolor.png"
+             IconImageSource="https://i.ibb.co/2jjvctd/usuario.png"
              >
     <Grid RowDefinitions="*,*">
         <!-- Información del usuario -->

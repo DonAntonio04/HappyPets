@@ -1,5 +1,6 @@
 ﻿using HappyPets.Datos;
 using HappyPets.Models;
+using HappyPets.Views.MainMenu;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -73,6 +74,7 @@ namespace HappyPets.ViewModel
             //    SelectPets.PetSize = Size;
             await parametros.EditPets(SelectPets);
             await DisplayAlert("Exito", "Se ha actualizado", "Ok");
+            await Navigation.PushAsync(new MyPets());
         }
 
         public async Task DeletePet()
@@ -80,6 +82,7 @@ namespace HappyPets.ViewModel
             var parametros = new DatosPets();
             await parametros.DeletePets(SelectPets.IdPet);
             await DisplayAlert("Eliminado", $"La mascota con el nombre {SelectPets.PetName} eliminado", "Ok");
+            await Navigation.PushAsync(new MyPets());
         }
         #endregion
 

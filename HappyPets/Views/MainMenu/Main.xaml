@@ -6,12 +6,12 @@
               BackgroundImageSource="https://i.ibb.co/PcBbDDM/fondocolor.png"
              Title="Main"
             
-            BackgroundColor="Orange"
+            BackgroundColor="White"
         
              xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core">
 
     <android:TabbedPage.ToolbarPlacement>Bottom</android:TabbedPage.ToolbarPlacement>
-    <android:TabbedPage.BarSelectedItemColor>Orange</android:TabbedPage.BarSelectedItemColor>
+    <android:TabbedPage.BarSelectedItemColor>orange</android:TabbedPage.BarSelectedItemColor>
     <android:TabbedPage.BarItemColor>Black</android:TabbedPage.BarItemColor>
 
     <TabbedPage.Children>

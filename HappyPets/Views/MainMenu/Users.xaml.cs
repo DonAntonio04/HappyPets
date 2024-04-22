@@ -1,4 +1,5 @@
-﻿using HappyPets.ViewModel;
+﻿using HappyPets.Models;
+using HappyPets.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
