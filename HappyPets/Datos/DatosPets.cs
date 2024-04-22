@@ -1,7 +1,9 @@
-﻿using Firebase.Database;
+﻿using Firebase.Auth;
+using Firebase.Database;
 using Firebase.Database.Query;
 using HappyPets.Conexion;
 using HappyPets.Models;
+using HappyPets.Datos;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -15,6 +17,18 @@ namespace HappyPets.Datos
     {
         public async Task InsertPet(PetsModel parametros)
         {
+            var dispenser = new DispenserModel()
+            {
+                FoodInContainer = 0,
+                FoodInPlate = 0,
+                OnOff = false
+            };
+
+
+            var dispenserResult = await Cconexion.firebase
+        .Child("Dispenser")
+        .PostAsync(dispenser);
+
             await Cconexion.firebase
                 .Child("Pets")
                 .PostAsync(new PetsModel()
@@ -25,8 +39,33 @@ namespace HappyPets.Datos
                     PetName = parametros.PetName,
                     PetSize = parametros.PetSize,
                     PetRaze = parametros.PetRaze,
+                    Dispenser = dispenser
                 }
                 );
+            
+
+            //    Guid idParaMascotasYDispensador = Guid.NewGuid();
+            //    await Cconexion.firebase
+            //        .Child("Pets")
+            //        .PostAsync(new PetsModel()
+            //        {
+            //            IdPet = idParaMascotasYDispensador,
+            //            PetAge = parametros.PetAge,
+            //            PetImage = parametros.PetImage,
+            //            PetName = parametros.PetName,
+            //            PetSize = parametros.PetSize,
+            //            PetRaze = parametros.PetRaze,
+            //        });
+            //    await Cconexion.firebase.Child("Dispenser")
+            //      .Child()
+            //      .Child(idParaMascotasYDispensador)
+            //      .PostAsync(new DispenserModel()
+
+            //      {
+            //          FoodInContainer = 0,
+            //          FoodInPlate = 0,
+            //          OnOff = false
+            //      });
 
 
         }

@@ -12,5 +12,6 @@ namespace HappyPets.Models
         public string PetName { get; set; }
         public string PetRaze { get; set; }
         public string PetSize { get; set; }
+        public DispenserModel Dispenser { get; set; }
     }
 }
